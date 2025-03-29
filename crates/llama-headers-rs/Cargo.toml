@@ -1,0 +1,42 @@
+[package]
+name = "llama-headers-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A sophisticated HTTP header generation library for realistic browser emulation"
+repository = "https://github.com/yourusername/llama-ecosystem"
+license = "MIT OR Apache-2.0"
+keywords = ["http", "headers", "user-agent", "web", "scraping"]
+categories = ["web-programming", "network-programming", "api-bindings"]
+readme = "README.md"
+
+[dependencies]
+rand = "0.8"
+regex = "1"
+lazy_static = "1.4"
+thiserror = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+chrono = "0.4"
+log = "0.4"
+ua_parser = "0.2"
+url = "2.2"
+
+[dev-dependencies]
+tokio = { version = "1.32", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+criterion = "0.5"
+pretty_assertions = "1.3"
+test-case = "3.1"
+
+[features]
+default = ["standard"]
+standard = []
+extended = ["mobile", "language-detection"]
+mobile = []
+language-detection = []
+stealth = []
+
+[[bench]]
+name = "header_generation"
+harness = false 
