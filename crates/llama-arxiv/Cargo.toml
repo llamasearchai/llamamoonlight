@@ -1,0 +1,72 @@
+[package]
+name = "llama-arxiv"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"]
+description = "A command-line tool for fetching, downloading, and processing arXiv papers"
+repository = "https://github.com/llama/llama-arxiv"
+readme = "README.md"
+license = "MIT"
+keywords = ["arxiv", "research", "pdf", "papers", "cli"]
+categories = ["command-line-utilities", "science"]
+
+[dependencies]
+# Command-line interface
+clap = { version = "4.3", features = ["derive"] }
+colored = "2.0"
+indicatif = "0.17"
+console = "0.15"
+
+# Async runtime and networking
+tokio = { version = "1.28", features = ["full"] }
+reqwest = { version = "0.11", features = ["json", "stream"] }
+url = "2.3"
+futures = "0.3"
+
+# Data parsing and serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.7"
+roxmltree = "0.18"
+lopdf = "0.30"
+chrono = { version = "0.4", features = ["serde"] }
+
+# Utility libraries
+thiserror = "1.0"
+anyhow = "1.0"
+log = "0.4"
+env_logger = "0.10"
+dirs = "5.0"
+lazy_static = "1.4"
+regex = "1.8"
+
+[dev-dependencies]
+tempfile = "3.5"
+criterion = "0.5"
+mockito = "1.1"
+assert_cmd = "2.0"
+predicates = "3.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+strip = true
+
+[package.metadata.deb]
+maintainer = "Llama Team <team@llama.ai>"
+copyright = "2023, Llama Team <team@llama.ai>"
+license-file = ["LICENSE", "4"]
+depends = "$auto"
+section = "utility"
+priority = "optional"
+assets = [
+    ["target/release/llama-arxiv", "usr/bin/", "755"],
+    ["README.md", "usr/share/doc/llama-arxiv/README", "644"],
+]
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/llama-arxiv", dest = "/usr/bin/llama-arxiv", mode = "755" },
+    { source = "README.md", dest = "/usr/share/doc/llama-arxiv/README", mode = "644", doc = true },
+] 

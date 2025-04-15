@@ -1,0 +1,39 @@
+[package]
+name = "llama-moonlight-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"]
+description = "Core functionality for Llama-Moonlight, a Rust-based browser automation framework"
+repository = "https://github.com/yourusername/llama-ecosystem"
+license = "MIT OR Apache-2.0"
+keywords = ["browser", "automation", "playwright", "scraping"]
+categories = ["web-programming", "api-bindings", "asynchronous"]
+
+[dependencies]
+llama-headers-rs = { path = "../../llama-headers-rs", version = "0.1.0" }
+tokio = { version = "1.32", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.10"
+anyhow = "1.0"
+async-trait = "0.1"
+futures = "0.3"
+reqwest = { version = "0.11", features = ["json"] }
+tokio-tungstenite = { version = "0.20", features = ["native-tls"] }
+bytes = "1.5"
+base64 = "0.21"
+lazy_static = "1.4"
+uuid = { version = "1.4", features = ["v4"] }
+regex = "1.9"
+chrono = "0.4"
+image = "0.24"
+tempfile = "3.8"
+
+[features]
+default = []
+stealth = ["llama-headers-rs/stealth"]
+recaptcha = []
+time-travel = []
+mlx = [] 

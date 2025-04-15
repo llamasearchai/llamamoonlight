@@ -1,0 +1,68 @@
+[package]
+name = "llama-moonlight"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"]
+description = "A powerful browser automation framework with MLX and Llama integration"
+repository = "https://github.com/yourusername/llama-ecosystem"
+license = "MIT OR Apache-2.0"
+keywords = ["browser", "automation", "playwright", "scraping", "ai"]
+categories = ["web-programming", "api-bindings", "asynchronous"]
+readme = "README.md"
+
+[workspace]
+members = [
+    "llama-moonlight-core",
+    "llama-moonlight-cli",
+    "llama-moonlight-pool",
+    "llama-moonlight-rxt",
+    "llama-moonlight-testutil",
+    "llama-moonlight-mlx"
+]
+
+[dependencies]
+llama-headers-rs = { path = "../llama-headers-rs", version = "0.1.0" }
+tokio = { version = "1.32", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.10"
+anyhow = "1.0"
+async-trait = "0.1"
+futures = "0.3"
+reqwest = { version = "0.11", features = ["json"] }
+clap = { version = "4.4", features = ["derive"] }
+indicatif = "0.17"
+chrono = "0.4"
+regex = "1.9"
+lazy_static = "1.4"
+rand = "0.8"
+uuid = { version = "1.4", features = ["v4"] }
+bytes = "1.5"
+tokio-tungstenite = { version = "0.20", features = ["native-tls"] }
+toml = "0.7"
+tempfile = "3.8"
+image = "0.24"
+base64 = "0.21"
+
+[dev-dependencies]
+criterion = "0.5"
+pretty_assertions = "1.3"
+test-case = "3.1"
+mockito = "1.2"
+
+[features]
+default = []
+stealth = ["llama-headers-rs/stealth"]
+recaptcha = []
+time-travel = []
+mlx = []
+
+[[bin]]
+name = "llama-moonlight"
+path = "src/main.rs"
+
+[[bench]]
+name = "browser_operations"
+harness = false 

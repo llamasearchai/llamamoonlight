@@ -1,0 +1,30 @@
+[package]
+name = "llama-moonlight-cli"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"]
+description = "Command-line interface for Llama-Moonlight, a browser automation framework"
+repository = "https://github.com/yourusername/llama-ecosystem"
+license = "MIT OR Apache-2.0"
+keywords = ["browser", "automation", "cli", "scraping"]
+categories = ["command-line-utilities", "web-programming"]
+
+[dependencies]
+llama-moonlight-core = { path = "../llama-moonlight-core", version = "0.1.0" }
+tokio = { version = "1.32", features = ["full"] }
+clap = { version = "4.4", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.10"
+indicatif = "0.17"
+colored = "2.0"
+chrono = "0.4"
+regex = "1.9"
+lazy_static = "1.4"
+dialoguer = "0.11"
+console = "0.15"
+tempfile = "3.8"
+reqwest = { version = "0.11", features = ["json"] } 

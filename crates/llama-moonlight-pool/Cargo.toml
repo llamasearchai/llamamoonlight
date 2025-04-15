@@ -1,0 +1,28 @@
+[package]
+name = "llama-moonlight-pool"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"] ["Nik Jois <nikjois@llamasearch.ai>"]
+description = "Browser pool for parallel automation in Llama-Moonlight"
+repository = "https://github.com/yourusername/llama-ecosystem"
+license = "MIT OR Apache-2.0"
+keywords = ["browser", "automation", "pool", "parallel", "scraping"]
+categories = ["web-programming", "asynchronous"]
+
+[dependencies]
+llama-moonlight-core = { path = "../llama-moonlight-core", version = "0.1.0" }
+tokio = { version = "1.32", features = ["full"] }
+async-trait = "0.1"
+futures = "0.3"
+thiserror = "1.0"
+anyhow = "1.0"
+log = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.8"
+uuid = { version = "1.4", features = ["v4"] }
+async-semaphore = "1.2"
+dashmap = "5.5"
+tokio-util = "0.7"
+metrics = "0.21"
+metrics-exporter-prometheus = "0.12" 
